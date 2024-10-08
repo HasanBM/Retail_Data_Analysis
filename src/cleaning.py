@@ -23,3 +23,15 @@ def load_data(file_path):
 
 # Entries in the Description column are in combination upper- and lower-case, while item names are entirely in upper-case 
 
+def empty_countries(file_path):
+    file_path = 'data/Online_Retail.xlsx'
+    xls_data = pd.read_excel(file_path)
+
+    empty_country_rows = xls_data[xls_data["Country"].isnull() | xls_data["Country"].str.strip() == ""]
+
+    if empty_country_rows.empty:
+        print(f"There are ${len(empty_country_rows)} rows with missing or empty country values")
+    else:
+        print("No empty or missing values found in 'Country' column")
+        
+    return len(empty_country_rows)
