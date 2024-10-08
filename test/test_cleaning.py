@@ -8,6 +8,8 @@ def test_load_data():
     assert df.shape[1] == 8
     assert len(df) > 0
 
+# We know from prior EDA that there are no empty cells in the "Country" column, and that there are empty cells in "CustomerID"
+
 @pytest.mark.it("checks whether there are any empty cells in any columns")
 def test_empty_values():
     file_path = 'data/Online_Retail.xlsx'

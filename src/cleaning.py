@@ -5,16 +5,13 @@ from datetime import datetime
 
 def load_data(file_path):
     file_path = 'data/Online_Retail.xlsx'
-    xls_data = pd.read_excel(file_path)
+    xls = pd.read_excel(file_path)
 
-    xls_data = xls_data.sort_values(by='InvoiceDate').reset_index(drop=True)
+    xls_data = xls.sort_values(by='InvoiceDate').reset_index(drop=True)
 
-    print(xls_data.head())
-    print(xls_data.info())
-    print(xls_data.describe())
-    return (xls_data.head())
+    return xls_data.shape , xls_data.head
 
-# Checking for missing values getting a sense of the data.
+# Checking for missing values to get a sense of the data.
 
 # Some price data is negative, implying debt, while quantities for certain items are also negative implying outflow.
 
