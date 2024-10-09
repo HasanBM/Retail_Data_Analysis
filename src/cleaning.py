@@ -3,6 +3,9 @@ import numpy as np
 from datetime import datetime
 
 
+file_path = 'data/Online_Retail.xlsx'
+xls_data = pd.read_excel(file_path)
+
 def load_data(file_path):
     file_path = 'data/Online_Retail.xlsx'
     xls = pd.read_excel(file_path)
@@ -40,6 +43,24 @@ def empty_values(file_path):
             print(f"No empty or missing values found in {col} column")
             
     return empty_values_count
+
+# Filling empty Customer IDs with -1
+def fill_missing_cust_id(file_path):
+    file_path = 'data/Online_Retail.xlsx'
+    xls_data = pd.read_excel(file_path)
+    prior_missing_cust_ids= xls_data['CustomerID'].isnull().sum()
+    xls_data['CustomerID'] = xls_data['CustomerID'].fillna(-1)
+
+    post_missing_cust_ids = xls_data['CustomerID'].isnull().sum()
+
+    return prior_missing_cust_ids, post_missing_cust_ids
+
+
+
+
+
+
+
 
     
 
