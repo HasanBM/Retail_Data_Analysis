@@ -9,7 +9,7 @@ def load_data(file_path):
 
     xls_data = xls.sort_values(by='InvoiceDate').reset_index(drop=True)
 
-    return xls_data.shape , xls_data.head
+    return xls_data.shape, xls_data.head(5)
 
 # Checking for missing values to get a sense of the data.
 
@@ -42,4 +42,5 @@ def empty_values(file_path):
     return empty_values_count
 
     
+
 
