@@ -4,7 +4,7 @@ from src.cleaning import load_data, fill_missing_cust_id
 @pytest.mark.it("checks whether the data has the necessary number of columns and is non-empty")
 def test_load_data():
     file_path = 'data/Online_Retail.xlsx'
-    data_shape, data_head = load_data(file_path)
+    data_shape, data_head, data_info = load_data(file_path)
     assert data_shape[1] == 8
     assert data_head.empty == False
 
