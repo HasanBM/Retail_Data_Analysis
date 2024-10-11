@@ -1,7 +1,11 @@
 
-This is an analysis of a dataset containing information about all the transactions occurring between 01/12/2010 and 09/12/2011 for a UK-based and registered non-store online retail.
+This is an analysis of a [dataset](https://archive.ics.uci.edu/dataset/352/online+retail) containing information about all the transactions occurring between 01/12/2010 and 09/12/2011 for a UK-based and registered non-store online retail.
 
 The key components are the cleaning functions, which are tested by the corresponding functions in the test_cleaning.py file, and the Jupyter notebook containing data analysis and visualisations.
+
+First, we carry out Exploratory Data Analysis (EDA), then clean the data using `pandas` queries, and finally carry out basic queries and visualisations to provide visual context for the information.
+
+In the event that this code is reused, please change the file_path in both the files inside the /src/ folder to match the filepath where you store the data. 
 
 This project utilised the following libraries:
 
